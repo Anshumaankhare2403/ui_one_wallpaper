@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _pages = [
     Container(
-      color: Colors.red,
+      color: Color(0xFFF8FAFC),
       child: Center(
         child: Text(
           "Home Page",
@@ -24,32 +24,19 @@ class _HomePageState extends State<HomePage> {
       ),
     ),
     Container(
-        color: Colors.greenAccent,
+        color: Color(0xFFF8FAFC),
         child:
             Center(child: Text("Search Page", style: TextStyle(fontSize: 24)))),
     Container(
-        color: Colors.blue,
-        child: Center(child: Text("New Page", style: TextStyle(fontSize: 24)))),
+        color: Color(0xFFF8FAFC),
+        child: Center(child: Text("Set", style: TextStyle(fontSize: 24)))),
   ];
-  Color _getBackgroundColor() {
-    switch (_selectedIndex) {
-      case 0:
-        return Colors.red;
-      case 1:
-        return Colors.greenAccent;
-      case 2:
-        return Colors.blueAccent;
-      default:
-        return Colors.amberAccent;
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNav(
         currentIndex: _selectedIndex,
-        backgroundColor: _getBackgroundColor(),
         onTap: (index) {
           setState(() {
             _selectedIndex = index;
@@ -59,6 +46,9 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Column(
           children: [
+            Container(
+              child: Text("data"),
+            ),
             Expanded(child: _pages[_selectedIndex]),
           ],
         ),

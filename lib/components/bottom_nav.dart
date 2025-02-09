@@ -7,11 +7,9 @@ class BottomNav extends StatefulWidget {
     super.key,
     required this.currentIndex,
     required this.onTap,
-    required this.backgroundColor,
   });
   final int currentIndex;
   final Function(int) onTap;
-  final Color backgroundColor;
 
   @override
   State<BottomNav> createState() => _BottomNavState();
@@ -21,12 +19,31 @@ class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-      backgroundColor: widget.backgroundColor,
+      color: Colors.black,
+      backgroundColor: Color(0xFFF8FAFC),
       index: widget.currentIndex,
       items: [
-        CurvedNavigationBarItem(child: Icon(Icons.home), label: 'Home'),
-        CurvedNavigationBarItem(child: Icon(Icons.search), label: 'Search'),
-        CurvedNavigationBarItem(child: Icon(Icons.add), label: 'New'),
+        CurvedNavigationBarItem(
+          child: Icon(
+            Icons.home,
+            color: Colors.white,
+            size: 30,
+          ),
+        ),
+        CurvedNavigationBarItem(
+          child: Icon(
+            Icons.search,
+            color: Colors.white,
+            size: 30,
+          ),
+        ),
+        CurvedNavigationBarItem(
+          child: Icon(
+            Icons.settings,
+            color: Colors.white,
+            size: 30,
+          ),
+        ),
       ],
       onTap: widget.onTap,
     );
