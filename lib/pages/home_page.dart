@@ -1,7 +1,8 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 import '../components/bottom_nav.dart';
+import '../components/hader_comp.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -46,8 +47,11 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              child: Text("data"),
+            SizedBox(
+              child: HaderComp(
+                navcolor: Color(0xFFF8FAFC),
+              ),
+              height: 80,
             ),
             Expanded(child: _pages[_selectedIndex]),
           ],

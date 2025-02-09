@@ -46,6 +46,9 @@ class _BottomNavState extends State<BottomNav> {
         ),
       ],
       onTap: widget.onTap,
+      height: 80,
+      animationDuration: Duration(milliseconds: 450),
+      animationCurve: Curves.decelerate,
     );
   }
 }
