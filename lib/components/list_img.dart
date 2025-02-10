@@ -51,7 +51,7 @@ class _ListImgState extends State<ListImg> {
             : 4;
 
     // Adjust childAspectRatio dynamically
-    double childAspectRatio = screenWidth < 600 ? 0.7 : 0.8;
+    double childAspectRatio = screenWidth < 600 ? 0.6 : 0.7;
 
     return Padding(
       padding: const EdgeInsets.all(10.0),

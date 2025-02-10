@@ -16,32 +16,28 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [
-    Column(
-      children: [
-        SizedBox(
-          child: Catgor(),
-          height: 130,
-        ),
-        Expanded(child: ListImg()),
-      ],
-    ),
-    Container(
-      color: const Color(0xFFF8FAFC),
-      child: const Center(
-        child: Text("Search Page", style: TextStyle(fontSize: 24)),
-      ),
-    ),
-    Container(
-      color: const Color(0xFFF8FAFC),
-      child: const Center(
-        child: Text("Set", style: TextStyle(fontSize: 24)),
-      ),
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    final List<Widget> pages = [
+      Column(
+        children: [
+          SizedBox(
+            height: screenHeight * 0.12, // Responsive height
+            child: const Catgor(),
+          ),
+          const Expanded(child: ListImg()),
+        ],
+      ),
+      const Center(
+        child: Text("Search Page", style: TextStyle(fontSize: 24)),
+      ),
+      const Center(
+        child: Text("Set", style: TextStyle(fontSize: 24)),
+      ),
+    ];
+
     return Scaffold(
       bottomNavigationBar: BottomNav(
         currentIndex: _selectedIndex,
@@ -51,15 +47,17 @@ class _HomePageState extends State<HomePage> {
           });
         },
       ),
+      backgroundColor: const Color(0xFFF8FAFC),
       body: SafeArea(
         child: Column(
           children: [
             SizedBox(
-              height: 80,
-              child: HaderComp(navcolor: const Color(0xFFF8FAFC)),
+              height: screenHeight * 0.1, // Responsive header height
+              child: const HaderComp(navcolor: Color(0xFFF8FAFC)),
             ),
             Expanded(
-                child: _pages[_selectedIndex]), // Fix: Allow the page to expand
+                child:
+                    pages[_selectedIndex]), // Uses Expanded to prevent overflow
           ],
         ),
       ),

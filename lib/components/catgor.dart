@@ -38,7 +38,7 @@ class _CatgorState extends State<Catgor> {
                 children: [
                   // Image Container
                   Container(
-                    width: screenWidth * 0.5, // Responsive width
+                    width: screenWidth * 0.462, // Responsive width
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       image: DecorationImage(
