@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import '../components/bottom_nav.dart';
 import '../components/hader_comp.dart';
+import '../components/catgor.dart';
+import '../components/list_img.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,22 +17,27 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    Container(
-      color: Color(0xFFF8FAFC),
-      child: Center(
-        child: Text(
-          "Home Page",
-          style: TextStyle(fontSize: 24),
+    Column(
+      children: [
+        SizedBox(
+          child: Catgor(),
+          height: 130,
         ),
+        Expanded(child: ListImg()),
+      ],
+    ),
+    Container(
+      color: const Color(0xFFF8FAFC),
+      child: const Center(
+        child: Text("Search Page", style: TextStyle(fontSize: 24)),
       ),
     ),
     Container(
-        color: Color(0xFFF8FAFC),
-        child:
-            Center(child: Text("Search Page", style: TextStyle(fontSize: 24)))),
-    Container(
-        color: Color(0xFFF8FAFC),
-        child: Center(child: Text("Set", style: TextStyle(fontSize: 24)))),
+      color: const Color(0xFFF8FAFC),
+      child: const Center(
+        child: Text("Set", style: TextStyle(fontSize: 24)),
+      ),
+    ),
   ];
 
   @override
@@ -48,12 +55,11 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             SizedBox(
-              child: HaderComp(
-                navcolor: Color(0xFFF8FAFC),
-              ),
               height: 80,
+              child: HaderComp(navcolor: const Color(0xFFF8FAFC)),
             ),
-            Expanded(child: _pages[_selectedIndex]),
+            Expanded(
+                child: _pages[_selectedIndex]), // Fix: Allow the page to expand
           ],
         ),
       ),
