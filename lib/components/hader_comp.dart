@@ -1,42 +1,41 @@
 import 'package:flutter/material.dart';
 
-class HaderComp extends StatefulWidget {
-  const HaderComp({super.key, required this.navcolor});
-  final navcolor;
-  @override
-  State<HaderComp> createState() => _HaderCompState();
-}
+class HaderComp extends StatelessWidget implements PreferredSizeWidget {
+  final Color navcolor;
 
-class _HaderCompState extends State<HaderComp> {
+  const HaderComp({super.key, required this.navcolor});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-          child: Container(
-        color: widget.navcolor,
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: Text(
-                  "WallpaperUS",
-                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.w900),
-                ),
+    return SafeArea(
+      child: Container(
+        color: navcolor,
+        padding: const EdgeInsets.symmetric(
+            horizontal: 24, vertical: 16), // Responsive padding
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // Title
+            Text(
+              "WallpaperUS",
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.width *
+                    0.06, // Responsive font size
+                fontWeight: FontWeight.w900,
               ),
-              // Icon(
-              //   Icons.sunny,
-              //   size: 26,
-              // ),
-              Icon(
-                Icons.nightlight_outlined,
-                size: 26,
-              )
-            ],
-          ),
+            ),
+            // Night Mode Icon
+            const Icon(
+              Icons.nightlight_outlined,
+              size: 26,
+            ),
+          ],
         ),
-      )),
+      ),
     );
   }
+
+  @override
+  Size get preferredSize =>
+      const Size.fromHeight(70); // Adjust height dynamically if needed
 }

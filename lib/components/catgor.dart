@@ -22,20 +22,23 @@ class _CatgorState extends State<Catgor> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: SizedBox(
+        height: screenWidth * 0.4, // Responsive height based on screen width
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: img.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.all(5.0),
+              padding: const EdgeInsets.all(8.0),
               child: Stack(
                 children: [
                   // Image Container
                   Container(
-                    width: 196,
+                    width: screenWidth * 0.5, // Responsive width
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       image: DecorationImage(
@@ -47,13 +50,11 @@ class _CatgorState extends State<Catgor> {
                   // Blur Effect
                   Positioned.fill(
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(15),
                       child: BackdropFilter(
-                        filter: ImageFilter.blur(
-                            sigmaX: 2, sigmaY: 2), // Blur intensity
+                        filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
                         child: Container(
-                          color: Colors.black
-                              .withOpacity(0.2), // Adjust transparency
+                          color: Colors.black.withOpacity(0.2), // Dark overlay
                         ),
                       ),
                     ),
@@ -63,8 +64,8 @@ class _CatgorState extends State<Catgor> {
                     child: Center(
                       child: Text(
                         img[index]["Imgname"]!,
-                        style: const TextStyle(
-                          fontSize: 30,
+                        style: TextStyle(
+                          fontSize: screenWidth * 0.07, // Responsive font size
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
