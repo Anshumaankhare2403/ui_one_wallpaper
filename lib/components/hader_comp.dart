@@ -20,14 +20,14 @@ class HaderComp extends StatelessWidget implements PreferredSizeWidget {
               "WallpaperUS",
               style: TextStyle(
                 fontSize: MediaQuery.of(context).size.width *
-                    0.06, // Responsive font size
+                    0.07, // Responsive font size
                 fontWeight: FontWeight.w900,
               ),
             ),
             // Night Mode Icon
             const Icon(
               Icons.nightlight_outlined,
-              size: 26,
+              size: 30,
             ),
           ],
         ),

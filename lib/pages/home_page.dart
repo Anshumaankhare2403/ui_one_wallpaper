@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
       Column(
         children: [
           SizedBox(
-            height: screenHeight * 0.12, // Responsive height
+            height: screenHeight * 0.14, // Responsive height
             child: const Catgor(),
           ),
           const Expanded(child: ListImg()),

@@ -52,7 +52,7 @@ class _CatgorState extends State<Catgor> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15),
                       child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
+                        filter: ImageFilter.blur(sigmaX: 0.9, sigmaY: 0.9),
                         child: Container(
                           color: Colors.black.withOpacity(0.2), // Dark overlay
                         ),
