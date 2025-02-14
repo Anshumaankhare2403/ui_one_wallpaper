@@ -2,8 +2,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class Catgor extends StatefulWidget {
-  const Catgor({super.key});
-
+  const Catgor({super.key, required this.widths, required this.heights});
+  final double widths;
+  final double heights;
   @override
   State<Catgor> createState() => _CatgorState();
 }
@@ -23,11 +24,13 @@ class _CatgorState extends State<Catgor> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: SizedBox(
-        height: screenWidth * 0.4, // Responsive height based on screen width
+        height: screenHeight *
+            widget.heights, // Responsive height based on screen width
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: img.length,
@@ -38,7 +41,7 @@ class _CatgorState extends State<Catgor> {
                 children: [
                   // Image Container
                   Container(
-                    width: screenWidth * 0.462, // Responsive width
+                    width: screenWidth * widget.widths, // Responsive width
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       image: DecorationImage(

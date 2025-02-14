@@ -1,6 +1,7 @@
 // ignore_for_file: file_names, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import './search_page.dart';
 import '../components/bottom_nav.dart';
 import '../components/hader_comp.dart';
 import '../components/catgor.dart';
@@ -25,14 +26,18 @@ class _HomePageState extends State<HomePage> {
         children: [
           SizedBox(
             height: screenHeight * 0.14, // Responsive height
-            child: const Catgor(),
+            child: const Catgor(
+              widths: 0.46,
+              heights: 0,
+            ),
           ),
-          const Expanded(child: ListImg()),
+          const Expanded(
+              child: ListImg(
+            scrll: Axis.vertical,
+          )),
         ],
       ),
-      const Center(
-        child: Text("Search Page", style: TextStyle(fontSize: 24)),
-      ),
+      SearchPage(),
       const Center(
         child: Text("Set", style: TextStyle(fontSize: 24)),
       ),

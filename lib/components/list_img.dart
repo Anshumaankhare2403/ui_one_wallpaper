@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import './image_open.dart';
 
 class ListImg extends StatefulWidget {
-  const ListImg({super.key});
+  const ListImg({super.key, required this.scrll});
+  final Axis scrll;
 
   @override
   State<ListImg> createState() => _ListImgState();
@@ -45,11 +46,6 @@ class _ListImgState extends State<ListImg> {
     double screenWidth = MediaQuery.of(context).size.width;
 
     // Dynamically set crossAxisCount based on screen width
-    int crossAxisCount = screenWidth < 600
-        ? 2
-        : screenWidth < 900
-            ? 3
-            : 4;
 
     // Adjust childAspectRatio dynamically
     double childAspectRatio = screenWidth < 600 ? 0.6 : 0.7;
@@ -57,8 +53,9 @@ class _ListImgState extends State<ListImg> {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: GridView.builder(
+        scrollDirection: widget.scrll,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount,
+          crossAxisCount: 2,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
           childAspectRatio: childAspectRatio,
