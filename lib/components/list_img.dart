@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './image_open.dart';
 
 class ListImg extends StatefulWidget {
   const ListImg({super.key});
@@ -54,7 +55,7 @@ class _ListImgState extends State<ListImg> {
     double childAspectRatio = screenWidth < 600 ? 0.6 : 0.7;
 
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(20.0),
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: crossAxisCount,
@@ -64,13 +65,24 @@ class _ListImgState extends State<ListImg> {
         ),
         itemCount: images.length,
         itemBuilder: (context, index) {
-          return Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(images[index]), // ✅ Responsive image loading
-                fit: BoxFit.cover,
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ImageOpen(imagelist: Image.asset(images[index])),
+                  ));
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image:
+                      AssetImage(images[index]), // ✅ Responsive image loading
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(10),
               ),
-              borderRadius: BorderRadius.circular(10),
             ),
           );
         },
