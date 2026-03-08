@@ -6,7 +6,6 @@ import '../components/bottom_nav.dart';
 import '../components/hader_comp.dart';
 import '../components/catgor.dart';
 import '../components/list_img.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
