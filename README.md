@@ -1,18 +1,38 @@
-# ui_one
+# Flutter Wallpaper App
 
-A new Flutter project.
+A simple Wallpaper Application built using Flutter. The app allows users to browse wallpapers and set them as device wallpaper directly from the application.
 
-## Getting Started
+## Features
+- Browse high quality wallpapers
+- Set wallpaper directly from the app
+- Smooth and responsive UI
+- Android support
+- Lightweight and fast
 
-This project is a starting point for a Flutter application.
+## Built With
+- Flutter
+- Dart
+- wallpaper_manager_flutter package
 
-A few resources to get you started if this is your first Flutter project:
+## APK Download
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+You can download and install the latest APK from the link below:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# ui_one_wallpaper
-# ui_one_wallpaper
+[Download APK](apk/app-release.apk)
+
+After downloading:
+1. Enable "Install from unknown sources" on your Android device.
+2. Install the APK.
+
+## Screenshots
+
+### Home Screen
+![Home](screenshots/home.png)
+
+### Wallpaper Preview
+![Preview](screenshots/preview.png)
+
+### Set Wallpaper
+![Set Wallpaper](screenshots/set_wallpaper.png)
+
+## Project Structure
