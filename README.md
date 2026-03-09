@@ -29,7 +29,7 @@ After downloading:
 ## Screenshots
 
 ### Home Screen
-<img src="https://github.com/user-attachments/assets/ec03064b-7c6f-4c08-863f-3e6ece9115eb" width="250"/>
+<img src="https://github.com/user-attachments/assets/ec03064b-7c6f-4c08-863f-3e6ece9115eb" width="250" hight = "100"/>
 
 ### Wallpaper Preview
 <img src="https://github.com/user-attachments/assets/5dbbb7ea-abec-4a48-ad71-b31a85bb78b3" width="250"/>
