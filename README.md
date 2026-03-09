@@ -27,12 +27,15 @@ After downloading:
 ## Screenshots
 
 ### Home Screen
-![Home](screenshots/home.png)
+![Screenshot_2026-03-09-10-42-41-33_95bd43a81bceb5f5b05b01e1267237e2 jpg](https://github.com/user-attachments/assets/ec03064b-7c6f-4c08-863f-3e6ece9115eb)
 
 ### Wallpaper Preview
-![Preview](screenshots/preview.png)
+![Screenshot_2026-03-09-10-42-50-68_95bd43a81bceb5f5b05b01e1267237e2 jpg](https://github.com/user-attachments/assets/5dbbb7ea-abec-4a48-ad71-b31a85bb78b3)
+
+![Screenshot_2026-03-09-10-42-59-30_95bd43a81bceb5f5b05b01e1267237e2 jpg](https://github.com/user-attachments/assets/cae578fc-46b7-434b-b7b7-df9ad17bcb36)
 
 ### Set Wallpaper
-![Set Wallpaper](screenshots/set_wallpaper.png)
+![Screenshot_2026-03-09-10-42-38-25_95bd43a81bceb5f5b05b01e1267237e2 jpg](https://github.com/user-attachments/assets/a38d72e9-8d1a-4a05-aab7-6326d3c729da)
+
 
 ## Project Structure
